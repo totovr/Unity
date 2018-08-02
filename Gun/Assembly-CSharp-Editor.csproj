@@ -10,7 +10,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace>
     </RootNamespace>
-    <ProjectGuid>{29DBE6D8-CD5E-E40F-9182-C9770952BC62}</ProjectGuid>
+    <ProjectGuid>{89E3356F-C231-7F04-B39B-705C8112EAC7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
@@ -65,16 +65,16 @@
     <Compile Include="Assets\EZ Effects\Scripts\Editor\CreateMuzzleEffect.cs" />
     <Compile Include="Assets\EZ Effects\Scripts\Editor\CreateTracerEffect.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>/Users/bsys/Developer/Unity/Gum/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>/Users/bsys/Developer/Unity/Gun/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/bsys/Developer/Unity/Gum/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/bsys/Developer/Unity/Gun/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/bsys/Developer/Unity/Gum/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>/Users/bsys/Developer/Unity/Gun/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/bsys/Developer/Unity/Gum/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/bsys/Developer/Unity/Gun/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -364,15 +364,15 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{9C11B48A-244B-74F0-D26D-23E6043F93FE}</Project>
+      <Project>{CF0A7D3B-430B-C287-7F83-4CE43360879A}</Project>
       <Name>Assembly-CSharp-firstpass</Name>
     </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
-      <Project>{91FA3AD0-D682-7101-D71B-F18190E538B9}</Project>
+      <Project>{F5252F08-7014-7E8A-0DF6-6450424B9164}</Project>
       <Name>Assembly-CSharp</Name>
     </ProjectReference>
     <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{C342C89D-4605-8DE6-8108-2B4FE92A9246}</Project>
+      <Project>{44A9490A-C053-D6BB-5D43-FB39BA47ED53}</Project>
       <Name>Assembly-CSharp-Editor-firstpass</Name>
     </ProjectReference>
   </ItemGroup>
