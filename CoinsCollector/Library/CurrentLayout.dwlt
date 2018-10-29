@@ -42,8 +42,8 @@ MonoBehaviour:
     y: 30
     width: 1904
     height: 931
-  m_MinSize: {x: 683, y: 342}
-  m_MaxSize: {x: 12008, y: 8042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
   controlID: 96
 --- !u!114 &3
@@ -114,14 +114,14 @@ MonoBehaviour:
     y: 564
     width: 1518
     height: 367
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
-  m_ActualView: {fileID: 18}
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
   - {fileID: 18}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -206,8 +206,8 @@ MonoBehaviour:
     y: 0
     width: 1518
     height: 931
-  m_MinSize: {x: 406, y: 342}
-  m_MaxSize: {x: 8006, y: 8042}
+  m_MinSize: {x: 406, y: 492}
+  m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
   controlID: 97
 --- !u!114 &10
@@ -323,20 +323,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Standard Assets/Characters/FirstPersonCharacter/Prefabs
+    - Assets/Standard Assets/Environment/Water/Water/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Standard Assets/Characters/FirstPersonCharacter/Prefabs
+  - Assets/Standard Assets/Environment/Water/Water/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\avega\Documents\Github\Unity\CoinsCollector
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 16320000
-    m_LastClickedID: 12822
-    m_ExpandedIDs: 00000000d62a00000c2c0000942d0000f62e0000fc350000
+    scrollPos: {x: 0, y: 119}
+    m_SelectedIDs: 98360000
+    m_LastClickedID: 13976
+    m_ExpandedIDs: 00000000d62a00000c2c0000522d0000942d0000f62e0000023100001e340000fc35000090360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,8 +389,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 7252feff
-    m_LastClickedInstanceID: -109966
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -480,9 +480,9 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: 4cfbffffe4fbffff00000000
+    m_SelectedIDs: 2cfbffff
+    m_LastClickedID: -1236
+    m_ExpandedIDs: e4fbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -537,9 +537,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -21.991604, y: -16.34629, z: 40.200687}
+    m_Target: {x: -15.234835, y: 3.6099725, z: 29.747036}
     speed: 2
-    m_Value: {x: -21.991604, y: -16.34629, z: 40.200687}
+    m_Value: {x: -15.234835, y: 3.6099725, z: 29.747036}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -567,13 +567,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.28215045, y: 0.67809844, z: -0.31956616, w: -0.5987079}
+    m_Target: {x: -0.36002952, y: 0.6128566, z: -0.36811382, w: -0.5993979}
     speed: 2
-    m_Value: {x: -0.28215045, y: 0.67809844, z: -0.31956616, w: -0.5987079}
+    m_Value: {x: -0.36002952, y: 0.6128566, z: -0.36811382, w: -0.5993979}
   m_Size:
-    m_Target: 35.41082
+    m_Target: 6.392145
     speed: 2
-    m_Value: 35.41082
+    m_Value: 6.392145
   m_Ortho:
     m_Target: 0
     speed: 2
