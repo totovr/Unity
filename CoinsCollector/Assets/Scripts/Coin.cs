@@ -24,7 +24,7 @@ public class Coin : MonoBehaviour {
     {
         if (collider.CompareTag("Player"))
         {
-            // Destroy the game object 
+            // Destroy the game object in this case the coin
             Destroy(gameObject);
         }
         
@@ -37,8 +37,16 @@ public class Coin : MonoBehaviour {
 
         if(cointsCount <= 0)
         {
-            Debug.Log("You have won the game");
+            // Find the timer and store it in a new object 
+            GameObject timer = GameObject.Find("GameTimer");
+            Destroy(timer);
+
+            // Create an array to store object of fireworks
+            GameObject[] fireworks = GameObject.FindGameObjectsWithTag("Firework");
+            foreach(GameObject firework in fireworks)
+            {
+                firework.GetComponent<ParticleSystem>().Play();
+            }
         }
     }
-
 }

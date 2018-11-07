@@ -27,7 +27,6 @@ public class Timer : MonoBehaviour {
             Coin.cointsCount = 0;
             // The game has end, load again the level
             SceneManager.LoadScene("Level_01");
-            Debug.Log("Time is over");
         }
 	}
 }
