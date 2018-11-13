@@ -55,7 +55,9 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AnimalBehaviour.cs" />
      <Compile Include="Assets\Scripts\Car.cs" />
+     <Compile Include="Assets\Scripts\Enemy.cs" />
      <Compile Include="Assets\Scripts\MyFirstScript.cs" />
+     <Compile Include="Assets\Scripts\Player.cs" />
  <Reference Include="UnityEditor.StandardEvents">
  <HintPath>C:/Users/avega/Documents/Github/Unity/Course/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
  </Reference>
