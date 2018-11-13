@@ -10,6 +10,7 @@ public class Coin : MonoBehaviour {
 	// Execute when the instance of this class is created
 	void Start ()
     {
+        // When the coin is instantiate will aument 1 in the counter
         Debug.Log("A coin was created");
         cointsCount++;
     }
@@ -24,7 +25,7 @@ public class Coin : MonoBehaviour {
     {
         if (collider.CompareTag("Player"))
         {
-            // Destroy the game object in this case the coin
+            // Destroy the game object that has the script, in this case the coin
             Destroy(gameObject);
         }
         
