@@ -18,9 +18,18 @@ public class BehaviourTraining : MonoBehaviour
     {
         Debug.Log("The class is going to start");
 
-        PairNumber(10);
+        //PairNumber(10);
+        if (PairNumber(10)) // if the number is true the if will execute
+        {
+            Debug.Log("The number is pair");
+        }
+        else
+        {
+            Debug.Log("The number is not");
+        }
 
-        SumTwoNumbers(2, 4);
+        Debug.Log("The total is: " + SumTwoNumbers(2, 4));
+
     }
 
     // Use this for initialization
@@ -64,20 +73,20 @@ public class BehaviourTraining : MonoBehaviour
         //Debug.Log(Time.time);
     }
 
-    void SumTwoNumbers(int n1, int n2)
+    int SumTwoNumbers(int n1, int n2)
     {
         int total = n1 + n2;
-        Debug.Log(total);
+        return total;
     }
-    void PairNumber(int number)
+    bool PairNumber(int number) // If the number is pair will return a true 
     {
         if (number % 2 == 0)
         {
-            Debug.Log("This is a pair number");
+            return true;
         }
         else
         {
-            Debug.Log("This number is not a pair number");
+            return false;
         }
     }
 }
