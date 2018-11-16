@@ -308,6 +308,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 458a4d4bb0577c34aab9591f1606ead8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  willRain: 1
+  gender: 0
+  age: 10
+  money: 10
+  cheat: 1
 --- !u!65 &516540094
 BoxCollider:
   m_ObjectHideFlags: 0
