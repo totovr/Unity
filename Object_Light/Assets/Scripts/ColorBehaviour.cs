@@ -36,7 +36,7 @@ public class ColorBehaviour : MonoBehaviour {
 	// Update is called once per frame
 	// This will update green, yellow, red
 	void Update () {
-		if(kinect.colorActuator == 110){ 
+		if(kinect.colorActuator == 100){ 
 
 			renderGreen.material.color = Color.green;
 			renderYellow.material.color = Color.black;
