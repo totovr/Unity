@@ -53,7 +53,7 @@ public class BodySourceView : MonoBehaviour
     //Threshold for determining stopped motion. Needs to be calibrated.
     public double threshold = 0.0;
 
-    public double emergencythreshold = 0.00005;
+    public double emergencythreshold = 0.4;
     public int emergencycounter = 0;
 
     // Variables used to save the Y values of the SpineBase
@@ -259,7 +259,7 @@ public class BodySourceView : MonoBehaviour
                 }
 
                 // Emergency stop
-                //EmergencyStop(body);
+                EmergencyStop(body);
 
                 // Calculation of the angles
                 float _ankleLeftAngle = _anglesCalculation.AngleBetweenTwoVectors(_ankleLeft - _kneeLeft, _ankleLeft - _footLeft);
@@ -716,10 +716,13 @@ public class BodySourceView : MonoBehaviour
       _jointHandL = new Vector3(body.Joints[Kinect.JointType.HandLeft].Position.X, body.Joints[Kinect.JointType.HandLeft].Position.Y, body.Joints[Kinect.JointType.HandLeft].Position.Z);
       _jointHead = new Vector3(body.Joints[Kinect.JointType.Head].Position.X, body.Joints[Kinect.JointType.Head].Position.Y, body.Joints[Kinect.JointType.Head].Position.Z);
 
+        float w = Math.Abs(_jointHandL.y - _jointHead.y);
+        Debug.Log(w);
+
         if (Math.Abs(_jointHandL.y - _jointHead.y) < emergencythreshold)
         {
             emergencycounter++;
-            if (emergencycounter > 150)
+            if (emergencycounter > 300)
             {
                 Destroy(gameObject);
             }
@@ -727,7 +730,7 @@ public class BodySourceView : MonoBehaviour
         else
         {
             {
-                Destroy(gameObject); emergencycounter = 0;
+                emergencycounter = 0;
             }
         }
     }
