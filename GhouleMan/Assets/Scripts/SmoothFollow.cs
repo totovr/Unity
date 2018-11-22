@@ -62,7 +62,7 @@ public class SmoothFollow : MonoBehaviour {
         if (CheckYMargin())
         {
             // Do an interpolation for the y position
-            _targetY = Mathf.Lerp(transform.position.y, cameraTarget.position.y, ySmooth * Time.deltaTime);
+            _targetY = Mathf.Lerp(transform.position.y, cameraTarget.position.y, ySmooth * Time.deltaTime); // Under some circumstances Lerp functions can be used to smooth a value over time. Consider the following piece of code
         }
 
         // Clamp the targets
