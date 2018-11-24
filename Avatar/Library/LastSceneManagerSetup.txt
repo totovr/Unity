@@ -1,0 +1,4 @@
+sceneSetups:
+- path: Assets/Scenes/Avatar.unity
+  isLoaded: 1
+  isActive: 1
