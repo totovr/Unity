@@ -79,18 +79,29 @@ public class BehaviourTraining : MonoBehaviour
         //userInfo.Add(GameObject.Find("Enemy")); // This add the element with using its name, NOT THE TAG
         //Debug.Log(userInfo[0] + " is type " + userInfo[0].GetType()); // GetType return the type of the variable or object 
 
-        // Add elements to one dictionary 
+        //// Add elements to one dictionary
         //personalInfo.Add("userLevel", 10);
         //personalInfo.Add("timePlayed", 3.5);
         //personalInfo.Add("userName", "Antonio");
         //personalInfo.Add("nickName", "Tono");
         //personalInfo.Add("bullshitFromScene", GameObject.Find("Enemy"));
 
-        // Access elements of one dictionary 
-        //Debug.Log(personalInfo["nickName"]);
+        //// Access elements of one dictionary
+        ////Debug.Log(personalInfo["nickName"]);
 
-        // Method for each
+        //// Method foreach applied in a dictionary  
+        //foreach(string key in personalInfo.Keys)
+        //{
+        //    Debug.Log("This is the key - " + key + " and this is the value - " + personalInfo[key]);
+        //}
 
+        //// Method foreach applied in an array
+        //int i = 0;
+        //foreach(string enemy in enemys)
+        //{
+        //    Debug.Log( i + "-" + enemy);
+        //    i = 1 + i;
+        //}
 
         //PairNumber(10);
         //if (PairNumber(10)) // if the number is true the if will execute
@@ -101,6 +112,41 @@ public class BehaviourTraining : MonoBehaviour
         //{
         //    Debug.Log("The number is not");
         //}
+
+        // Example of use a bucle to detect an impair number
+        //for (int i = 1; i < 26; i++)
+        //{
+        //    if(PairNumber(i))
+        //    {
+        //        Debug.Log(i + " is pair");
+        //    }
+        //    else
+        //    {
+        //        Debug.Log(i + " is not pair");
+        //    }
+        //}
+
+        // Is goo to give the number -1 if we dont know the position of the element
+        int lastPosition = -1;
+        // Find an element in the array
+        for(int i = 0; i < enemys.Length; i++)
+        {
+            if(enemys[i] == "Batman")
+            {
+                Debug.Log("I found batman");
+                lastPosition = i;
+                break;
+            }
+        }
+
+        if(lastPosition != -1)
+        {
+            Debug.Log("I found Batman in the position: " + lastPosition);
+        }
+        else
+        {
+            Debug.Log("I did not find nothing");
+        }
 
     }
 
