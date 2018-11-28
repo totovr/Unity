@@ -13,7 +13,7 @@ public class Car : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        GameObject.Find("Enemy");
     }
 
     // Update is called once per frame
