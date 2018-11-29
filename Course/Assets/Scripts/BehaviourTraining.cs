@@ -12,7 +12,7 @@ public class BehaviourTraining : MonoBehaviour
     public bool cheat = false;
 
     private bool imRich = true;
-    private bool iHaveToStudy; // By default is private
+    bool iHaveToStudy; // By default is private
 
     // This are examples of arrays and how to declare them 
     public string[] enemys = new string[]{"Bad guy", "Cyclop", "Bat", "Rat"};
