@@ -11,31 +11,15 @@ public class Family : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        father = new Person();
-        father.name = "Antonio";
-        father.lastname = "Vega";
-        father.age = 55;
+        father = new Person("Antonio", "Vega", 55);
         father.isMan = true;
         father.isMarried = true;
 
-        mother = new Person();
-        mother.name = "Rocio";
-        mother.lastname = "Ramirez";
-        mother.age = 52;
+        mother = new Person("Rocio", "Ramirez", 52);
         mother.isMan = false;
         mother.isMarried = true;
 
-        mother = new Person();
-        mother.name = "Rocio";
-        mother.lastname = "Ramirez";
-        mother.age = 52;
-        mother.isMan = false;
-        mother.isMarried = true;
-
-        son = new Person();
-        son.name = father.name;
-        son.lastname = father.lastname;
-        son.age = 26;
+        son = new Person(father.name, father.lastname, 26);
         son.isMan = true;
         son.isMarried = false;
 
@@ -45,9 +29,12 @@ public class Family : MonoBehaviour {
         father.married = mother;
         mother.married = father;
 
-        if (father.married == mother)
+        if (father.IsMarriedWith(mother)) // if there is not object we use the null object 
         {
             Debug.Log(father.name + " and " + mother.name + " are married");
+        } else
+        {
+            Debug.Log(father.name + " and " + mother.name + " are not married");
         }
     }
 	
