@@ -6,11 +6,11 @@ public class UpAngles : MonoBehaviour {
 
     public static UpAngles sharedInstance;
 
-    public int le = 0;
-    public int ls = 2;
+    public int lE = 0;
+    public int lS = 2;
 
-    public int re = 4;
-    public int rs = 6;
+    public int rE = 4;
+    public int rS = 6;
 
     void Start()
     {
@@ -19,40 +19,42 @@ public class UpAngles : MonoBehaviour {
 
     public void Statements(float _leftElbow, float _leftShoulder, float _rightElbow, float _rightShoulder)
     {
-        if (_leftElbow <= 110)
+        //Debug.Log(_leftElbow + " " + _leftShoulder + " " + _rightElbow + " " + _rightElbow);
+
+        if (_leftElbow <= 110.0f)
         {
-            le = 1;
+            lE = 1;
         }
         else
         {
-            le = 0;
+            lE = 0;
         }
 
-        if (_leftShoulder <= 110)
+        if (_leftShoulder <= 50.0f)
         {
-            le = 3;
+            lS = 3;
         }
         else
         {
-            le = 2;
+            lS = 2;
         }
 
-        if (_rightElbow <= 110)
+        if (_rightElbow <= 110.0f)
         {
-            le = 5;
+            rE = 5;
         }
         else
         {
-            le = 4;
+            rE = 4;
         }
 
-        if (_rightShoulder <= 110)
+        if (_rightShoulder <= 50.0f)
         {
-            le = 7;
+            rS = 7;
         }
         else
         {
-            le = 6;
+            rS = 6;
         }
     }
 }

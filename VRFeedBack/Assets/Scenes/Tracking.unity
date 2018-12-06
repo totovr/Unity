@@ -10047,6 +10047,11 @@ Prefab:
       propertyPath: RightShoulderText
       value: 
       objectReference: {fileID: 1222129808}
+    - target: {fileID: 114745490221943112, guid: a279120256ba9ae4a8a3dce0c8b0b41a,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a279120256ba9ae4a8a3dce0c8b0b41a, type: 2}
   m_IsPrefabAsset: 0
