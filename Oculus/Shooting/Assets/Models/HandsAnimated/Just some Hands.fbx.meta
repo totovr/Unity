@@ -815,7 +815,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Default Take
       takeName: Default Take
-      firstFrame: 0
+      firstFrame: 24
       lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
