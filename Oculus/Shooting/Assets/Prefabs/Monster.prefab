@@ -427,6 +427,7 @@ GameObject:
   - component: {fileID: 4593197965221228}
   - component: {fileID: 95741822295638052}
   - component: {fileID: 136702208916831554}
+  - component: {fileID: 114123888103736216}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Enemy
@@ -1155,7 +1156,7 @@ Animator:
   m_GameObject: {fileID: 1550809164045088}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 28eac1441ca10954b946e83da940981f, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 875359765f537744ba396c2ffd1e1c56, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1164,6 +1165,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114123888103736216
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1550809164045088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6ff3eaf65d33474ebf00b9d54c022ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 95741822295638052}
+  clips: []
 --- !u!136 &136702208916831554
 CapsuleCollider:
   m_ObjectHideFlags: 1
