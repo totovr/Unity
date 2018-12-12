@@ -26,7 +26,9 @@ GameObject:
   m_Component:
   - component: {fileID: 435386}
   - component: {fileID: 5068320}
-  - component: {fileID: 5891808}
+  - component: {fileID: 58704493675234094}
+  - component: {fileID: 58675704254786332}
+  - component: {fileID: 114025870801740686}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -41,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.86, y: -2.8536792, z: 0}
+  m_LocalPosition: {x: 0.01, y: 0.69, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 468746}
@@ -81,21 +83,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &5891808
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 186324}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 6200000, guid: a9b64ad4139c64251825cfc4b7f92c36, type: 2}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.0206362, y: -0.07781124}
-  serializedVersion: 2
-  m_Radius: 0.91109526
 --- !u!95 &9560166
 Animator:
   serializedVersion: 3
@@ -171,3 +158,50 @@ Prefab:
   m_SourcePrefab: {fileID: 0}
   m_RootGameObject: {fileID: 186324}
   m_IsPrefabAsset: 1
+--- !u!58 &58675704254786332
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186324}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.20999998, y: -0.43523538}
+  serializedVersion: 2
+  m_Radius: 0.4857943
+--- !u!58 &58704493675234094
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186324}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.40019262, y: -0.03923452}
+  serializedVersion: 2
+  m_Radius: 0.53138745
+--- !u!114 &114025870801740686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb8e9bf1fdd996646847b56091e60407, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 30
+  runningSpeed: 4
+  groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  animator: {fileID: 9560166}

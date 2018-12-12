@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class LevelBlock : MonoBehaviour {
 
-    public Transform ExitPoint;
+    public Transform exitPoint;
 
 }
