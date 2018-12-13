@@ -14,5 +14,11 @@ public class MonsterController : MonoBehaviour {
         clips = animator.runtimeAnimatorController.animationClips;
     }
 
+    public void StartGame()
+    {
+        EnemyMovement.sharedInstance.alive = true;
+        animator.SetBool("isAlive", true);
+    }
+
 
 }

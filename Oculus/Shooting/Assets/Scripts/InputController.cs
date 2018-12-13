@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InputController : MonoBehaviour {
-	
+
 	// Update is called once per frame
 	void Update () {
 
@@ -12,8 +12,7 @@ public class InputController : MonoBehaviour {
                 SoundController.sharedInstance.audioSource.Play();
                 ShootTrigger.sharedInstance.RayCastGun();
             }
-
-        
+  
 	}
 
 }

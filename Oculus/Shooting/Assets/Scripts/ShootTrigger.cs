@@ -21,8 +21,8 @@ public class ShootTrigger : MonoBehaviour {
         {
             if (hit.collider.gameObject.CompareTag("Enemy"))
             {
-
-                MonsterController.sharedInstance.animator.SetBool("isWaiting", true);
+                EnemyPositionGeneration.sharedInstance.movementMonster = false;
+                MonsterController.sharedInstance.animator.SetBool("isShooted", true);
                 Destroy(hit.collider.gameObject, MonsterController.sharedInstance.clips[1].length);
             }
         }

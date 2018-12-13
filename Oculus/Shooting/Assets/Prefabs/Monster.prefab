@@ -428,6 +428,7 @@ GameObject:
   - component: {fileID: 95741822295638052}
   - component: {fileID: 136702208916831554}
   - component: {fileID: 114123888103736216}
+  - component: {fileID: 114659974703810922}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Enemy
@@ -1178,6 +1179,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95741822295638052}
   clips: []
+--- !u!114 &114659974703810922
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1550809164045088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adc36589561b5534cb477f495b722990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
+  obstacleRange: 3
+  alive: 0
 --- !u!136 &136702208916831554
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -1187,10 +1202,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2.3170419
+  m_Radius: 0.512622
+  m_Height: 1.6851816
   m_Direction: 1
-  m_Center: {x: -0, y: 0.65852094, z: 0}
+  m_Center: {x: 0, y: 0.79392266, z: 0.28147113}
 --- !u!137 &137762232359513450
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
