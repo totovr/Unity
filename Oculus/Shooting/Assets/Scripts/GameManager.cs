@@ -27,7 +27,6 @@ public class GameManager : MonoBehaviour {
     {
         currentGameState = GameState.menu;
 
-
         EnemyPositionGeneration.sharedInstance.GenerateMonster();
         
     }

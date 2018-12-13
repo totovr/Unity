@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1992632387452288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.151682, y: -1.2552153, z: -1.35}
+  m_LocalPosition: {x: -0.51, y: 3.22, z: -6.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -150,7 +150,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clipGun: {fileID: 8300000, guid: fb3321891c4e579479c8d6c6bd8eccf2, type: 3}
-  clipBreath: {fileID: 8300000, guid: 72f4617e3e26f11448d9f6e3c49edb54, type: 3}
   audioSource: {fileID: 82068990500618318}
 --- !u!114 &114488218024254056
 MonoBehaviour:

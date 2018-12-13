@@ -188,9 +188,9 @@
      <Compile Include="Assets\Scripts\EnemyPositionGeneration.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\InputController.cs" />
+     <Compile Include="Assets\Scripts\KillPlayer.cs" />
      <Compile Include="Assets\Scripts\MonsterController.cs" />
      <Compile Include="Assets\Scripts\MonsterJumpTrigger.cs" />
-     <Compile Include="Assets\Scripts\PlayerTrigger.cs" />
      <Compile Include="Assets\Scripts\ShootTrigger.cs" />
      <Compile Include="Assets\Scripts\SoundController.cs" />
  <Reference Include="UnityEditor.StandardEvents">

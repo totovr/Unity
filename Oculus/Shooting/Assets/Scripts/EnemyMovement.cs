@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour {
 
     public float speed = 3.0f;
     public float obstacleRange = 3.0f;
+    public float userInRange = 2.0f;
 
     public bool alive = false;
 
@@ -24,8 +25,10 @@ public class EnemyMovement : MonoBehaviour {
             transform.Translate(0, 0, speed * Time.deltaTime);
         }
 
+        // Check the distance of the wall to rotate
         RayCastCheck();
-
+        // Check if is necessary to jump
+        MonsterJumpTrigger.sharedInstance.Jump();
     }
 
     public void RayCastCheck()

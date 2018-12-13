@@ -243,9 +243,10 @@ GameObject:
   - component: {fileID: 114839473649145378}
   - component: {fileID: 114209608132142592}
   - component: {fileID: 114007661585840762}
+  - component: {fileID: 136648830819386334}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -767,7 +768,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403553765639522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -6.65}
+  m_LocalPosition: {x: 0, y: 1, z: -6.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4407640623740280}
@@ -1221,7 +1222,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1163346295301458}
   m_LocalRotation: {x: -0.44910824, y: 0.44910824, z: 0.5461701, w: 0.5461701}
-  m_LocalPosition: {x: 0.01615, y: -0.020365195, z: -0.005426955}
+  m_LocalPosition: {x: 0.00519, y: -0.00528, z: 0.0004}
   m_LocalScale: {x: 0.010000001, y: 0.01, z: 0.010000001}
   m_Children: []
   m_Father: {fileID: 4631137627895706}
@@ -1826,7 +1827,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
-  m_Range: 4.5
+  m_Range: 2
   m_SpotAngle: 15.466767
   m_CookieSize: 10
   m_Shadows:
@@ -2010,6 +2011,19 @@ MonoBehaviour:
   fadeInTexture: {fileID: 0}
   speedRotationIncrement: 0.05
   layerName: Default
+--- !u!136 &136648830819386334
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1403553765639522}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.9969034
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.0030112267, z: 0}
 --- !u!137 &137339230030894156
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

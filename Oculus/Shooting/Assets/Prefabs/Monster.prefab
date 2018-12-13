@@ -429,6 +429,8 @@ GameObject:
   - component: {fileID: 136702208916831554}
   - component: {fileID: 114123888103736216}
   - component: {fileID: 114659974703810922}
+  - component: {fileID: 114402201750210304}
+  - component: {fileID: 114598566457979142}
   m_Layer: 0
   m_Name: Monster
   m_TagString: Enemy
@@ -1179,6 +1181,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 95741822295638052}
   clips: []
+--- !u!114 &114402201750210304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1550809164045088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d40f5eaa641955b479bd8f8060d75d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  userInRange: 2
+--- !u!114 &114598566457979142
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1550809164045088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ccea5269ad0754f9ac79ae9762a113, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114659974703810922
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1192,6 +1217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   obstacleRange: 3
+  userInRange: 2
   alive: 0
 --- !u!136 &136702208916831554
 CapsuleCollider:
@@ -1200,7 +1226,7 @@ CapsuleCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1550809164045088}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.512622
   m_Height: 1.6851816
