@@ -27,7 +27,7 @@ public class MonsterJumpTrigger : MonoBehaviour {
             }
             else
             {
-                EnemyMovement.sharedInstance.speed = 3.0f;
+                EnemyMovement.sharedInstance.speed = 4.5f;
             }
         }
 

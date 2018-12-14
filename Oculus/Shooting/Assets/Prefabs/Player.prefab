@@ -185,6 +185,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1266630768715526
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4918724451989828}
+  - component: {fileID: 136103602311268818}
+  m_Layer: 0
+  m_Name: KillPoint
+  m_TagString: KillPoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1283699544126980
 GameObject:
   m_ObjectHideFlags: 1
@@ -243,7 +259,6 @@ GameObject:
   - component: {fileID: 114839473649145378}
   - component: {fileID: 114209608132142592}
   - component: {fileID: 114007661585840762}
-  - component: {fileID: 136648830819386334}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -768,9 +783,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1403553765639522}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -6.23}
+  m_LocalPosition: {x: 0, y: 1.85, z: -6.23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 4918724451989828}
   - {fileID: 4407640623740280}
   - {fileID: 4242405278084012}
   m_Father: {fileID: 0}
@@ -958,7 +974,7 @@ Transform:
   m_Children:
   - {fileID: 4155866945706202}
   m_Father: {fileID: 4009389573641758}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4248434638007972
 Transform:
@@ -1083,7 +1099,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4009389573641758}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4423330542205606
 Transform:
@@ -1221,13 +1237,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1163346295301458}
-  m_LocalRotation: {x: -0.44910824, y: 0.44910824, z: 0.5461701, w: 0.5461701}
+  m_LocalRotation: {x: -0.44590724, y: 0.4459073, z: 0.54878664, w: 0.5487866}
   m_LocalPosition: {x: 0.00519, y: -0.00528, z: 0.0004}
   m_LocalScale: {x: 0.010000001, y: 0.01, z: 0.010000001}
   m_Children: []
   m_Father: {fileID: 4631137627895706}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -78.19, y: 0, z: 90.00001}
 --- !u!4 &4607158844157142
 Transform:
   m_ObjectHideFlags: 1
@@ -1417,6 +1433,19 @@ Transform:
   m_LocalScale: {x: 1, y: 0.9999998, z: 0.9999999}
   m_Children: []
   m_Father: {fileID: 4373088140577728}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4918724451989828
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266630768715526}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.073, y: 0.548, z: 0.3325}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4009389573641758}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &20276842520167842
@@ -1826,8 +1855,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
-  m_Range: 2
+  m_Intensity: 3
+  m_Range: 4
   m_SpotAngle: 15.466767
   m_CookieSize: 10
   m_Shadows:
@@ -1845,9 +1874,9 @@ Light:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
-  m_AreaSize: {x: 1, y: 1}
+  m_AreaSize: {x: 3, y: 3}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
@@ -2011,19 +2040,19 @@ MonoBehaviour:
   fadeInTexture: {fileID: 0}
   speedRotationIncrement: 0.05
   layerName: Default
---- !u!136 &136648830819386334
+--- !u!136 &136103602311268818
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1403553765639522}
+  m_GameObject: {fileID: 1266630768715526}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.9969034
+  m_Radius: 0.1
+  m_Height: 0.2
   m_Direction: 1
-  m_Center: {x: 0, y: -0.0030112267, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!137 &137339230030894156
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

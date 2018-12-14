@@ -6,6 +6,7 @@ public class ShootTrigger : MonoBehaviour {
 
     public Transform gunBarrelTransform;
     public static ShootTrigger sharedInstance;
+    public static int monsterLife = 5;
 
     void Start()
     {
@@ -21,9 +22,13 @@ public class ShootTrigger : MonoBehaviour {
         {
             if (hit.collider.gameObject.CompareTag("Enemy"))
             {
-                EnemyPositionGeneration.sharedInstance.movementMonster = false;
-                MonsterController.sharedInstance.animator.SetBool("isShooted", true);
-                Destroy(hit.collider.gameObject, MonsterController.sharedInstance.clips[1].length);
+                monsterLife--;
+                if (monsterLife == 0)
+                {
+                    EnemyPositionGeneration.sharedInstance.movementMonster = false;
+                    MonsterController.sharedInstance.animator.SetBool("isShooted", true);
+                    Destroy(hit.collider.gameObject, MonsterController.sharedInstance.clips[1].length);
+                }
             }
         }
     }

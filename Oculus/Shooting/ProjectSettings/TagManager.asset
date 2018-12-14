@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Wall
   - KillPoint
+  - Near
   layers:
   - Default
   - TransparentFX

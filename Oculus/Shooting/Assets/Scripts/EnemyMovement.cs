@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour {
 
-    public float speed = 3.0f;
+    public float speed = 4.5f;
     public float obstacleRange = 3.0f;
-    public float userInRange = 2.0f;
-
+    
     public bool alive = false;
 
     public static EnemyMovement sharedInstance;

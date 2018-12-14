@@ -16,7 +16,6 @@ public class SoundController : MonoBehaviour {
         sharedInstance = this;
         audioSource = GetComponent<AudioSource>(); // Initialize the AudioSource
         audioSource.clip = clipGun; // Save the clip in the Audio source variable
-
     }
 	
 }
