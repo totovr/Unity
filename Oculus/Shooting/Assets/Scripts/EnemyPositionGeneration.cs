@@ -19,7 +19,6 @@ public class EnemyPositionGeneration : MonoBehaviour {
 	// Update is called once per frame
 	public void GenerateMonster() {
 
-
 		if( enemy == null && movementMonster == true)
         {
             
@@ -29,7 +28,6 @@ public class EnemyPositionGeneration : MonoBehaviour {
                 enemy.transform.Rotate(0, angle, 0);
             
         }
-
 
 	}
 }
