@@ -6,17 +6,18 @@ using UnityEngine.UI;
 public class textControl : MonoBehaviour {
 
     public Text Message;
-    BluetoothSerialReceiver bluetoothController;
+    BluetoothController bluetoothController;
     string stringMessage;
 
     void Start()
     {
-        bluetoothController = GetComponent<BluetoothSerialReceiver>();
+        bluetoothController = GetComponent<BluetoothController>();
     }
 
     void Update()
     {
         stringMessage = bluetoothController.readData;
+        Debug.Log(stringMessage);
         Message.text = "This is the message " + stringMessage.ToString();
     }
 
