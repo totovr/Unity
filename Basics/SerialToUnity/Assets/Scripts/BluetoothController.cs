@@ -20,7 +20,6 @@ public class BluetoothController : MonoBehaviour
 
     }
 
-
     private void OnApplicationQuit()
     {
         myData.Close();
@@ -31,7 +30,15 @@ public class BluetoothController : MonoBehaviour
     {
         if (myData.IsOpen)
         {
-            readData = myData.ReadLine();
+            // readData = myData.ReadLine();
+            try
+            {
+                readData = myData.ReadLine();
+            }
+            catch (System.Exception)
+            {
+                throw;
+            }
         }
     }
 
