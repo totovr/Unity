@@ -230,6 +230,10 @@ Prefab:
       propertyPath: m_SizeDelta.x
       value: 222.7
       objectReference: {fileID: 0}
+    - target: {fileID: 1546086169342092, guid: acc51cdad273f534690910e3152bc68f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: acc51cdad273f534690910e3152bc68f, type: 2}
   m_IsPrefabAsset: 0
@@ -376,12 +380,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1788736702 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114388575468681196, guid: acc51cdad273f534690910e3152bc68f,
-    type: 2}
-  m_PrefabInternal: {fileID: 48725498}
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &2080397344
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,8 +388,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2080397346}
-  - component: {fileID: 2080397347}
   - component: {fileID: 2080397345}
+  - component: {fileID: 2080397347}
   m_Layer: 0
   m_Name: MessageController
   m_TagString: Untagged
@@ -410,7 +408,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db5666c9822de14990504292fa132cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  readData: 
 --- !u!4 &2080397346
 Transform:
   m_ObjectHideFlags: 0
@@ -432,7 +429,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2080397344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 867ccb851b194c24fb1b3f10117ae82e, type: 3}
+  m_Script: {fileID: 11500000, guid: 3965922345e5f2f44a148cd8a7799dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Message: {fileID: 1788736702}
+  serialHandler: {fileID: 2080397345}
