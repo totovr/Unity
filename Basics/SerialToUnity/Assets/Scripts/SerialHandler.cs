@@ -2,12 +2,28 @@
 using System.IO.Ports;
 using System.Threading;
 
+public enum SerialPortConnection
+{
+    COM3,
+    COM4,
+    COM5,
+    COM6
+}
+
 public class SerialHandler : MonoBehaviour
 {
     public delegate void SerialDataReceivedEventHandler(string message);
     public event SerialDataReceivedEventHandler OnDataReceived;
 
-    SerialPort myData = new SerialPort("COM5", 115200);
+    // SerialPort myData = new SerialPort("COM5", 115200);
+    // public string portName = "COM5"; // We will check this
+    
+    // Actual SerialPort
+    public SerialPortConnection portName = SerialPortConnection.COM5;
+    public int baudRate = 115200;
+    private string _portName; // Este tampoco es necesario 
+
+    private SerialPort myData;
     private Thread thread_;
     private bool isRunning_ = false;
 
@@ -30,7 +46,33 @@ public class SerialHandler : MonoBehaviour
 
     void OnDestroy()
     {
+        for (int i = 0; i < 10; i++)
+        {
+            Debug.Log("1");
+            myData.Write("1");
+        }
         myData.Close();
+    }
+
+    string ChoosePort(SerialPortConnection port)
+    {
+        //string _portName;
+
+        if (port == SerialPortConnection.COM3)
+        {
+            _portName = "COM3";
+        }
+        else if (port == SerialPortConnection.COM4)
+        {
+            _portName = "COM4";
+        }
+        else if (port == SerialPortConnection.COM5)
+        {
+            _portName = "COM5";
+        }
+
+        return _portName;
+
     }
 
     // Use this for initialization
@@ -41,7 +83,9 @@ public class SerialHandler : MonoBehaviour
         {
             Debug.Log(string.Format("port : {0}", str));
         }
-        
+
+        myData = new SerialPort(ChoosePort(portName), baudRate, Parity.None, 8, StopBits.One);
+
         myData.Open();
         isRunning_ = true;
 
@@ -84,17 +128,17 @@ public class SerialHandler : MonoBehaviour
         }
     }
 
-    //public void Write(string message)
-    //{
-    //    try
-    //    {
-    //        myData.Write(message);
-    //    }
-    //    catch (System.Exception e)
-    //    {
-    //        Debug.LogWarning(e.Message);
-    //    }
-    //}
+    public void Write(string message)
+    {
+        try
+        {
+            myData.Write(message);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogWarning(e.Message);
+        }
+    }
 
 }
 
