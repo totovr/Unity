@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SerialControl : MonoBehaviour {
+public class SerialControl : MonoBehaviour
+{
 
     public SerialHandler serialHandler;
 
@@ -13,7 +14,7 @@ public class SerialControl : MonoBehaviour {
 
     void Updata()
     {
-        serialHandler.Write("0");
+        // serialHandler.Write("0");
     }
 
     void OnDataReceived(string message)
