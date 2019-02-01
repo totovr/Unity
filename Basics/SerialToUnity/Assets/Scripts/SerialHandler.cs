@@ -10,23 +10,35 @@ public enum SerialPortConnection
     COM6
 }
 
+public enum BaudRateValue
+{
+    _9600,
+    _38400,
+    _115200
+}
+
+
 public class SerialHandler : MonoBehaviour
 {
     public delegate void SerialDataReceivedEventHandler(string message);
     public event SerialDataReceivedEventHandler OnDataReceived;
 
-    // SerialPort myData = new SerialPort("COM5", 115200);
-    // public string portName = "COM5"; // We will check this
-    
+    // Create a serial object
+    private SerialPort myData;
+
     // Actual SerialPort
     public SerialPortConnection portName = SerialPortConnection.COM5;
-    public int baudRate = 115200;
-    private string _portName; // Este tampoco es necesario 
+    private string _portName;
 
-    private SerialPort myData;
+    // Baud rate
+    public BaudRateValue baudRate = BaudRateValue._115200; // probando 
+    private int _baudRate;
+
+    // Create a thread
     private Thread thread_;
     private bool isRunning_ = false;
 
+    // Message variables
     private string message_;
     private bool isNewMessageReceived_ = false;
 
@@ -46,7 +58,7 @@ public class SerialHandler : MonoBehaviour
 
     void OnDestroy()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 5; i++) // To reset the microcontroller once the program is closed 
         {
             Debug.Log("1");
             myData.Write("1");
@@ -56,7 +68,6 @@ public class SerialHandler : MonoBehaviour
 
     string ChoosePort(SerialPortConnection port)
     {
-        //string _portName;
 
         if (port == SerialPortConnection.COM3)
         {
@@ -75,6 +86,26 @@ public class SerialHandler : MonoBehaviour
 
     }
 
+    int ChooseBaudRate(BaudRateValue baudRate)
+    {
+
+        if (baudRate == BaudRateValue._9600)
+        {
+            _baudRate = 9600;
+        }
+        else if (baudRate == BaudRateValue._38400)
+        {
+            _baudRate = 38400;
+        }
+        else if (baudRate == BaudRateValue._115200)
+        {
+            _baudRate = 115200;
+        }
+
+        return _baudRate;
+
+    }
+
     // Use this for initialization
     void OpenPort()
     {
@@ -84,7 +115,7 @@ public class SerialHandler : MonoBehaviour
             Debug.Log(string.Format("port : {0}", str));
         }
 
-        myData = new SerialPort(ChoosePort(portName), baudRate, Parity.None, 8, StopBits.One);
+        myData = new SerialPort(ChoosePort(portName), ChooseBaudRate(baudRate), Parity.None, 8, StopBits.One);
 
         myData.Open();
         isRunning_ = true;

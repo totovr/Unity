@@ -388,8 +388,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2080397346}
-  - component: {fileID: 2080397345}
   - component: {fileID: 2080397347}
+  - component: {fileID: 2080397345}
   m_Layer: 0
   m_Name: MessageController
   m_TagString: Untagged
@@ -408,6 +408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5db5666c9822de14990504292fa132cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  portName: 2
+  baudRate: 2
 --- !u!4 &2080397346
 Transform:
   m_ObjectHideFlags: 0

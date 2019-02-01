@@ -25,7 +25,8 @@ public class SerialControl : MonoBehaviour
 
         try
         {
-            Debug.Log(data);
+            string bioSignals = string.Join("", data);
+            Debug.Log(bioSignals);
         }
         catch (System.Exception e)
         {
