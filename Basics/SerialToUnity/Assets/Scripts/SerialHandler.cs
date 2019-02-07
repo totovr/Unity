@@ -7,7 +7,11 @@ public enum SerialPortConnection
     COM3,
     COM4,
     COM5,
-    COM6
+    COM6, 
+    COM7,
+    COM8,
+    COM9,
+    COM10
 }
 
 public enum BaudRateValue
@@ -80,6 +84,26 @@ public class SerialHandler : MonoBehaviour
         else if (port == SerialPortConnection.COM5)
         {
             _portName = "COM5";
+        }
+        else if (port == SerialPortConnection.COM6)
+        {
+            _portName = "COM6";
+        }
+        else if (port == SerialPortConnection.COM7)
+        {
+            _portName = "COM7";
+        }
+        else if (port == SerialPortConnection.COM8)
+        {
+            _portName = "COM8";
+        }
+        else if (port == SerialPortConnection.COM9)
+        {
+            _portName = "COM9";
+        }
+        else if (port == SerialPortConnection.COM10)
+        {
+            _portName = "\\\\.\\COM10"; 
         }
 
         return _portName;
