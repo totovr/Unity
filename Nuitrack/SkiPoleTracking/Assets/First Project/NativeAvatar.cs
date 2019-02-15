@@ -8,7 +8,8 @@ public class NativeAvatar : MonoBehaviour
 
     public JointType[] typeJoint;
     GameObject[] CreatedJoint;
-    public GameObject PrefabJoint;
+    public GameObject LeftHand; // 8
+    public GameObject RightHand; // 9
 
     // References for the canvas 
     //public Text LeftAnkleText;
@@ -42,7 +43,7 @@ public class NativeAvatar : MonoBehaviour
     float _kneeRightAngle = 0.0f;
     float _hipRightAngle = 0.0f;
 
-    void Awake()
+    void Start()
     {
         // Unity Vectors 
         _footLeft = new UnityEngine.Vector3(0.0f, 0.0f, 0.0f);
@@ -59,23 +60,25 @@ public class NativeAvatar : MonoBehaviour
         _kneeRight = new UnityEngine.Vector3(0.0f, 0.0f, 0.0f);
         _hipRight = new UnityEngine.Vector3(0.0f, 0.0f, 0.0f);
 
-
         _anglesCalculation = gameObject.GetComponent<AnglesCalculation>(); // Initialize the AnglesCalculation class
-    }
 
-    void Start()
-    {
         CreatedJoint = new GameObject[typeJoint.Length];
         for (int q = 0; q < typeJoint.Length; q++)
         {
-            if (q == 8 || q == 9)
+            if (q == 8)
             {
-                CreatedJoint[q] = Instantiate(PrefabJoint);
+                CreatedJoint[q] = Instantiate(LeftHand);
+                CreatedJoint[q].transform.SetParent(transform);
+
+            } else if (q == 9)
+            {
+                CreatedJoint[q] = Instantiate(RightHand);
                 CreatedJoint[q].transform.SetParent(transform);
             }
         }
         message = "Skeleton created";
     }
+
 
     void Update()
     {
@@ -87,11 +90,29 @@ public class NativeAvatar : MonoBehaviour
 
             for (int q = 0; q < typeJoint.Length; q++)
             {
-                if (q == 8 || q == 9)
+                if (q == 8)
                 {
                     nuitrack.Joint joint = skeleton.GetJoint(typeJoint[q]);
+
+                    // For the position 
                     UnityEngine.Vector3 newPosition = 0.001f * joint.ToVector3(); // This is a 3D unity Vector 
                     CreatedJoint[q].transform.localPosition = newPosition;
+
+                    // For the rotation
+                    //Quaternion jointOrient = Quaternion.Inverse((CalibrationInfo.SensorOrientation) * joint.ToQuaternion());
+                    //CreatedJoint[q].transform.localRotation = jointOrient;
+                }
+                else if (q == 9)
+                {
+                    nuitrack.Joint joint = skeleton.GetJoint(typeJoint[q]);
+
+                    // For the position 
+                    UnityEngine.Vector3 newPosition = 0.001f * joint.ToVector3(); // This is a 3D unity Vector 
+                    CreatedJoint[q].transform.localPosition = newPosition;
+
+                    // For the rotation
+                    //Quaternion jointOrient = Quaternion.Inverse((CalibrationInfo.SensorOrientation) * joint.ToQuaternion());
+                    //CreatedJoint[q].transform.localRotation = jointOrient;
                 }
             }
 
