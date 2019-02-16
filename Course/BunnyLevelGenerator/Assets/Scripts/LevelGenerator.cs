@@ -72,6 +72,7 @@ public class LevelGenerator : MonoBehaviour {
         LevelBlock block = currentLevelBlocks[0];
         // Remove the block from the list
         currentLevelBlocks.Remove(block);
+        // Destroy the block
         Destroy(block.gameObject);
     }
 

@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{4A913F5A-4D02-0469-AD47-4949CEC46D0C}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelGenerator.cs">
+    <Files>
+      <File FileName="Assets/Scripts/GameManager.cs" Line="60" Column="6" />
+      <File FileName="Assets/Scripts/LevelGenerator.cs" Line="35" Column="30" />
+      <File FileName="Assets/Scripts/LeaveBlockTrigger.cs" Line="14" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

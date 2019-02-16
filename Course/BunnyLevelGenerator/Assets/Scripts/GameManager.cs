@@ -17,6 +17,8 @@ public class GameManager : MonoBehaviour {
     // singleton
     public static GameManager sharedInstance;
 
+    public Canvas menuCanvas;
+
     void Awake()
     {
         // Initialize the singleton and share all the GameManager fields and methods with it
@@ -30,13 +32,13 @@ public class GameManager : MonoBehaviour {
 
     void Update()
     {
-        if (currentGameState != GameState.inTheGame)
-        {
-            if (Input.GetButtonDown("s"))
-            {
-                StartGame();
-            }
-        }
+        //if (currentGameState != GameState.inTheGame)
+        //{
+        //    if (Input.GetButtonDown("s"))
+        //    {
+        //        StartGame();
+        //    }
+        //}
 
     }
 
@@ -65,12 +67,15 @@ public class GameManager : MonoBehaviour {
         if(newGameState == GameState.menu)
         {
             // The logic of the principal menu
+            menuCanvas.enabled = true;
         } else if (newGameState == GameState.inTheGame)
         {
             // This is the current scene or level of the game
+            menuCanvas.enabled = false;
         } else if (newGameState == GameState.gameOver)
         {
             // Gameover
+            menuCanvas.enabled = false;
         }
 
         // This is the new state after the change 

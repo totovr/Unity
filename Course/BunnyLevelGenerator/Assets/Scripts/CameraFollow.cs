@@ -33,9 +33,6 @@ public class CameraFollow : MonoBehaviour {
 		Vector3 destination = transform.position + delta;
 
 		destination = new Vector3(destination.x, offset.y, destination.z);
-
 		transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
-		
-
 	}
 }
