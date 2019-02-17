@@ -14,6 +14,8 @@ public class LevelGenerator : MonoBehaviour {
     public List<LevelBlock> currentLevelBlocks = new List<LevelBlock>(); // List of the blocks that are currently displaying
     public Transform levelInitialPoint; // Initial point where the first level will be created 
 
+    private bool isGeneratingInitialBlocks = false;
+
     void Awake()
     {
         sharedInstance = this;
@@ -32,16 +34,23 @@ public class LevelGenerator : MonoBehaviour {
     // Generate the initial blocks two times
     public void GenerateInitialBlocks()
     {
+        isGeneratingInitialBlocks = true;
         for (int i = 0; i < 3; i++)
         {
             AddNewBlock();
         }
+        isGeneratingInitialBlocks = false;
     }
 
     public void AddNewBlock()
     {
         // Select a random block of the ones that are available
         int randomIndex = Random.Range(0, allTheLevelBlocks.Count);
+
+        if (isGeneratingInitialBlocks)
+        {
+            randomIndex = 0;
+        }
 
         LevelBlock block = (LevelBlock)Instantiate(allTheLevelBlocks[randomIndex]); // Generate a copy of the block that we have
         block.transform.SetParent(this.transform, false);
@@ -74,6 +83,14 @@ public class LevelGenerator : MonoBehaviour {
         currentLevelBlocks.Remove(block);
         // Destroy the block
         Destroy(block.gameObject);
+    }
+
+    public void RemoveAllTheBlocks()
+    {
+        while(currentLevelBlocks.Count > 0)
+        {
+            RemoveOldBlock();
+        }
     }
 
 }

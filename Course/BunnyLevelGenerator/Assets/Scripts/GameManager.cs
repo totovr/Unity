@@ -53,12 +53,14 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         PlayerController.sharedInstance.StartGame();
+        LevelGenerator.sharedInstance.GenerateInitialBlocks();
         ChangeGameState(GameState.inTheGame);
     }
 
     // Called when the player dies
     public void GameOver()
     {
+        LevelGenerator.sharedInstance.RemoveAllTheBlocks();
         ChangeGameState(GameState.gameOver);
     }
 
