@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState {
-    menu, 
-    inTheGame, 
+public enum GameState
+{
+    menu,
+    inTheGame,
     gameOver
 }
 
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
 
     // Actual GameState
     public GameState currentGameState = GameState.menu;
@@ -18,6 +20,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager sharedInstance;
 
     public Canvas menuCanvas;
+    public Canvas gameCanvas;
 
     void Awake()
     {
@@ -28,6 +31,8 @@ public class GameManager : MonoBehaviour {
     void Start()
     {
         currentGameState = GameState.menu;
+        menuCanvas.enabled = true;
+        gameCanvas.enabled = false;
     }
 
     void Update()
@@ -42,15 +47,15 @@ public class GameManager : MonoBehaviour {
 
     }
 
-	// Use this for start the game
-	public void StartGame ()
+    // Use this for start the game
+    public void StartGame()
     {
         PlayerController.sharedInstance.StartGame();
         ChangeGameState(GameState.inTheGame);
     }
-	
+
     // Called when the player dies
-    public void GameOver ()
+    public void GameOver()
     {
         ChangeGameState(GameState.gameOver);
     }
@@ -64,18 +69,23 @@ public class GameManager : MonoBehaviour {
     // This method will manage the states of the game
     void ChangeGameState(GameState newGameState)
     {
-        if(newGameState == GameState.menu)
+        if (newGameState == GameState.menu)
         {
             // The logic of the principal menu
             menuCanvas.enabled = true;
-        } else if (newGameState == GameState.inTheGame)
+            gameCanvas.enabled = false;
+        }
+        else if (newGameState == GameState.inTheGame)
         {
             // This is the current scene or level of the game
             menuCanvas.enabled = false;
-        } else if (newGameState == GameState.gameOver)
+            gameCanvas.enabled = true;
+        }
+        else if (newGameState == GameState.gameOver)
         {
             // Gameover
             menuCanvas.enabled = false;
+            gameCanvas.enabled = false;
         }
 
         // This is the new state after the change 
