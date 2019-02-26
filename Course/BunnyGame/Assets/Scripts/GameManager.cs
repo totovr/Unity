@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public Canvas gameCanvas;
     public Canvas gameOverCanvas;
 
+    [HideInInspector]
     public int collectedCoins = 0;
 
     void Awake()
