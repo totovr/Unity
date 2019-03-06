@@ -50,26 +50,25 @@ public class Coin : MonoBehaviour
         CoinCounter += coinValue;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        if(other.CompareTag("Player"))
+        if(collider.CompareTag("Player"))
         {
+            Debug.Log("The coin was collected");
             Destroy(gameObject);
         }
-
     }
-
 
     private void OnDestroy()
     {
         CoinCounter -= coinValue;
+        Debug.Log(CoinCounter);
 
         if (CoinCounter <= 0)
         {
-            Debug.Log("All the coins were collected");
+            // Debug.Log("All the coins were collected");
         }
 
     }
-
 
 }
