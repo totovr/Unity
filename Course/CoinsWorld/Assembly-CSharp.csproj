@@ -54,6 +54,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Coin.cs" />
+     <Compile Include="Assets\Scripts\UICoins.cs" />
+     <Compile Include="Assets\Scripts\UICountDown.cs" />
+     <Compile Include="Assets\Scripts\UITime.cs" />
  <Reference Include="Unity.TextMeshPro.Editor">
  <HintPath>C:/Users/avega/Documents/Developer/Unity/CoinsWorld/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
  </Reference>

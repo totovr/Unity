@@ -13,13 +13,12 @@ public class Coin : MonoBehaviour
 
     public Material[] CoinMaterials;
 
-    public static int CoinCounter = 0;
+    public static int CoinsCounter = 0;
 
     private int coinValue = 1;
 
     CoinType coinMaterial
     {
-
         get
         {
             return _type;
@@ -38,33 +37,33 @@ public class Coin : MonoBehaviour
             if (Rend != null)
             {
                 Rend.material = _mat;
-                coinValue = 1 + (int)Mathf.Pow(_typeValue, 2);
+                coinValue = 1 + (int)Mathf.Pow(_typeValue, 2); // here the value of the coin is modified internally
             }
         }
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        coinMaterial = Type;
-        CoinCounter += coinValue;
+        coinMaterial = Type; // setup all the features of the coin 
+        CoinsCounter += coinValue;
     }
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.CompareTag("Player"))
+        if(collider.CompareTag("Player") || collider.CompareTag("PlayerFPS"))
         {
             Debug.Log("The coin was collected");
+            CoinsCounter -= coinValue;
+            UICoins.sharedInstance.UpdateCoins();
+            UICountDown.TimerBonus = coinValue * coinValue * 3;
             Destroy(gameObject);
         }
     }
 
     private void OnDestroy()
     {
-        CoinCounter -= coinValue;
-        Debug.Log(CoinCounter);
-
-        if (CoinCounter <= 0)
+        if (CoinsCounter <= 0)
         {
             // Debug.Log("All the coins were collected");
         }
