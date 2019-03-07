@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum CoinType { BRONZE, SILVER, GOLD };
+
 public class Coin : MonoBehaviour
 {
-
-    public enum CoinType { BRONZE, SILVER, GOLD};
-
     public CoinType Type;
 
     private CoinType _type;

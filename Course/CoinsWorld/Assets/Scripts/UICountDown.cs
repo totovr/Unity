@@ -8,12 +8,14 @@ public class UICountDown : MonoBehaviour
 {
     public static float TimerBonus = 0;
 
+    public int GameTime = 60;
+
     private Text _countDownText;
 
     private GameObject player;
     private CharacterController characterController;
     private AudioSource playerAudio;
-    
+
     private float _countDownTimerDuration;
     private float _countDownTimerStartTime;
 
@@ -24,24 +26,25 @@ public class UICountDown : MonoBehaviour
     void Start()
     {
         _countDownText = GetComponent<Text>();
+
         player = GameObject.FindGameObjectWithTag("PlayerFPS");
         characterController = player.GetComponent<CharacterController>();
         playerAudio = player.GetComponent<AudioSource>();
 
-        SetUpCountDownTimer(10); // this is the time that will be provide to the user
+        SetUpCountDownTimer(GameTime); // this is the time that will be provide to the user
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(TimerBonus > 0)
+        if (TimerBonus > 0)
         {
             _countDownTimerStartTime += TimerBonus;
             TimerBonus = 0; // reset the variable or it will generate a bug
         }
 
         timeLeft = (int)CountDownTimeRemaning();
-        if(timeLeft > 0)
+        if (timeLeft > 0)
         {
             timerMessage = "Timer: " + LeadingZero(timeLeft);
         }
@@ -72,6 +75,6 @@ public class UICountDown : MonoBehaviour
 
     string LeadingZero(int n)
     {
-        return n.ToString().PadLeft(3, '0'); 
+        return n.ToString().PadLeft(3, '0');
     }
 }
