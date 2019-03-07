@@ -50,12 +50,17 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
-        if(collider.CompareTag("Player") || collider.CompareTag("PlayerFPS"))
+        if (collider.CompareTag("Player") || collider.CompareTag("PlayerFPS"))
         {
             Debug.Log("The coin was collected");
             CoinsCounter -= coinValue;
             UICoins.sharedInstance.UpdateCoins();
-            UICountDown.TimerBonus = coinValue * coinValue * 3;
+
+            if (GameManager.sharedInstance.currentGameState != GameState.gameOver)
+            {
+                UICountDown.TimerBonus = coinValue * coinValue * 3;
+            }
+
             Destroy(gameObject);
         }
     }
@@ -64,9 +69,11 @@ public class Coin : MonoBehaviour
     {
         if (CoinsCounter <= 0)
         {
-            // Debug.Log("All the coins were collected");
+            Debug.Log("The coins are finished");
+            UICountDown.sharedInstance.theGameIsCounting = false;
+            // Invoke("GameManager.sharedInstance.GameWon", 2);
+            GameManager.sharedInstance.GameWon();
         }
-
     }
 
 }

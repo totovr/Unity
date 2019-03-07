@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class UICountDown : MonoBehaviour
 {
+    public static UICountDown sharedInstance;
+
     public static float TimerBonus = 0;
 
     public int GameTime = 60;
@@ -13,7 +17,7 @@ public class UICountDown : MonoBehaviour
     private Text _countDownText;
 
     private GameObject player;
-    private CharacterController characterController;
+    private FirstPersonController characterControllerScript;
     private AudioSource playerAudio;
 
     private float _countDownTimerDuration;
@@ -22,41 +26,61 @@ public class UICountDown : MonoBehaviour
     string timerMessage;
     int timeLeft;
 
+    [HideInInspector]
+    public bool theGameIsCounting = true;
+
+    void Awake()
+    {
+        sharedInstance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         _countDownText = GetComponent<Text>();
 
         player = GameObject.FindGameObjectWithTag("PlayerFPS");
-        characterController = player.GetComponent<CharacterController>();
+        characterControllerScript = player.GetComponent<FirstPersonController>();
         playerAudio = player.GetComponent<AudioSource>();
 
+        characterControllerScript.m_WalkSpeed = 0.0f;
+        characterControllerScript.m_RunSpeed = 0.0f;
+
+        // SetUpCountDownTimer(GameTime); // this is the time that will be provide to the user
+    }
+
+    // This is a probe
+    public void StartTheCountDown()
+    {
         SetUpCountDownTimer(GameTime); // this is the time that will be provide to the user
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (TimerBonus > 0)
+        if (GameManager.sharedInstance.theGameStart == true && theGameIsCounting == true)
         {
-            _countDownTimerStartTime += TimerBonus;
-            TimerBonus = 0; // reset the variable or it will generate a bug
-        }
+            if (TimerBonus > 0)
+            {
+                _countDownTimerStartTime += TimerBonus;
+                TimerBonus = 0; // reset the variable or it will generate a bug
+            }
 
-        timeLeft = (int)CountDownTimeRemaning();
-        if (timeLeft > 0)
-        {
-            timerMessage = "Timer: " + LeadingZero(timeLeft);
-        }
-        else
-        {
-            timerMessage = "Game Over";
-            characterController.enabled = false;
-            playerAudio.enabled = false;
-        }
+            timeLeft = (int)CountDownTimeRemaning();
+            if (timeLeft > 0)
+            {
+                timerMessage = "Timer: " + LeadingZero(timeLeft);
+            }
+            else
+            {
+                timerMessage = "Game Over";
+                StopPlayerMovement();
+                GameManager.sharedInstance.GameOver();
+                Debug.Log("The game is finished"); 
+            }
 
-        _countDownText.text = timerMessage;
-
+            _countDownText.text = timerMessage;
+        }
     }
 
     // This will setup the timing 
@@ -77,4 +101,17 @@ public class UICountDown : MonoBehaviour
     {
         return n.ToString().PadLeft(3, '0');
     }
+
+    public void PlayerMovement()
+    {
+        characterControllerScript.m_WalkSpeed = 5.0f;
+        characterControllerScript.m_RunSpeed = 10.0f;
+    }
+
+    public void StopPlayerMovement()
+    {
+        characterControllerScript.m_WalkSpeed = 0.0f;
+        characterControllerScript.m_RunSpeed = 0.0f;
+    }
+
 }
