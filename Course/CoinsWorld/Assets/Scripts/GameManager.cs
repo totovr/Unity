@@ -48,6 +48,12 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // If the user want to quit the game
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            QuitTheGame();
+        }
+
         if (currentGameState != GameState.inTheGame && currentGameState != GameState.wonTheGame && GlobalStaticVariables.theUserResetTheGame == false)
         {
             if (Input.GetKeyDown(KeyCode.P))
@@ -63,18 +69,20 @@ public class GameManager : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.O))
             {
+                // Reload the scene
                 GameSceneManager.sharedInstance.GameScene();
             }
-            else if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                Application.Quit();
-            }
+            //else if (Input.GetKeyDown(KeyCode.Escape))
+            //{
+            //    QuitTheGame();
+            //}
         }
     }
 
     // Use this for start the game
     public void StartGame()
     {
+
         GlobalStaticVariables.theUserResetTheGame = false;
         UICountDown.sharedInstance.StartTheCountDown();
         UICountDown.sharedInstance.PlayerMovement();
@@ -95,6 +103,11 @@ public class GameManager : MonoBehaviour
         GlobalStaticVariables.theUserResetTheGame = true;
         theGameStart = false;
         ChangeGameState(GameState.wonTheGame);
+    }
+
+    void QuitTheGame()
+    {
+        Application.Quit();
     }
 
     // This method will manage the states of the game

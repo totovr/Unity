@@ -790,6 +790,11 @@ PrefabInstance:
 
         <color="red">Press P</color>'
       objectReference: {fileID: 0}
+    - target: {fileID: 1171666935672961725, guid: cd163963fbe25b345a76e37d4174390e,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1024
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd163963fbe25b345a76e37d4174390e, type: 3}
 --- !u!1001 &1413034389234668320
@@ -923,6 +928,11 @@ PrefabInstance:
         type: 3}
       propertyPath: GameTime
       value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 1413034389712446280, guid: a28f0c3942a3fef43af86aef77e37cf1,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a28f0c3942a3fef43af86aef77e37cf1, type: 3}
@@ -1882,6 +1892,11 @@ PrefabInstance:
 
         <color="green">Press O to play again</color>'
       objectReference: {fileID: 0}
+    - target: {fileID: 5290233093253850125, guid: dac1a14dd8f808b40be1deda81edd16b,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1024
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dac1a14dd8f808b40be1deda81edd16b, type: 3}
 --- !u!224 &6881491582631317346 stripped
@@ -2029,5 +2044,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 720948759}
+    - target: {fileID: 8813653447695640428, guid: 2164ca3159919e14e9a107212ae9e911,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1024
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2164ca3159919e14e9a107212ae9e911, type: 3}
