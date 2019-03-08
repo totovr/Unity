@@ -52,7 +52,6 @@ public class Coin : MonoBehaviour
     {
         if (collider.CompareTag("Player") || collider.CompareTag("PlayerFPS"))
         {
-            Debug.Log("The coin was collected");
             CoinsCounter -= coinValue;
             UICoins.sharedInstance.UpdateCoins();
 
@@ -69,7 +68,6 @@ public class Coin : MonoBehaviour
     {
         if (CoinsCounter <= 0)
         {
-            Debug.Log("The coins are finished");
             UICountDown.sharedInstance.theGameIsCounting = false;
             // Invoke("GameManager.sharedInstance.GameWon", 2);
             GameManager.sharedInstance.GameWon();

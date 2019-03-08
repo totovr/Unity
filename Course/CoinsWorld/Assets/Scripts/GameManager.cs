@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -13,6 +14,7 @@ public enum GameState
 public class GameManager : MonoBehaviour
 {
     // Actual GameState
+    [HideInInspector]
     public GameState currentGameState;
 
     // singleton
@@ -35,6 +37,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         currentGameState = GameState.menu;
+
+        // Setup the canvas behaviour
         menuCanvas.enabled = true;
         gameCanvas.enabled = false;
         // gameCanvasVR.enabled = false;
@@ -44,18 +48,26 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        if (currentGameState != GameState.inTheGame)
+        if (currentGameState != GameState.inTheGame && currentGameState != GameState.wonTheGame && GlobalStaticVariables.theUserResetTheGame == false)
         {
             if (Input.GetKeyDown(KeyCode.P))
             {
                 StartGame();
             }
-        } else if (currentGameState != GameState.wonTheGame)
+        }
+        else if (currentGameState != GameState.inTheGame && currentGameState != GameState.wonTheGame && GlobalStaticVariables.theUserResetTheGame == true)
+        {
+            StartGame();
+        }
+        else if (currentGameState == GameState.wonTheGame)
         {
             if (Input.GetKeyDown(KeyCode.O))
             {
-                // here reload the complete scene
-                // add the scene manager
+                GameSceneManager.sharedInstance.GameScene();
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Application.Quit();
             }
         }
     }
@@ -63,7 +75,7 @@ public class GameManager : MonoBehaviour
     // Use this for start the game
     public void StartGame()
     {
-        Debug.Log("The Game started");
+        GlobalStaticVariables.theUserResetTheGame = false;
         UICountDown.sharedInstance.StartTheCountDown();
         UICountDown.sharedInstance.PlayerMovement();
         theGameStart = true;
@@ -73,7 +85,6 @@ public class GameManager : MonoBehaviour
     // Called when the player dies
     public void GameOver()
     {
-        Debug.Log("gameover");
         theGameStart = false;
         ChangeGameState(GameState.gameOver);
     }
@@ -81,7 +92,7 @@ public class GameManager : MonoBehaviour
     // Called when the player dies
     public void GameWon()
     {
-        Debug.Log("game won");
+        GlobalStaticVariables.theUserResetTheGame = true;
         theGameStart = false;
         ChangeGameState(GameState.wonTheGame);
     }

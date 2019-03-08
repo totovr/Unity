@@ -54,8 +54,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Coin.cs" />
+     <Compile Include="Assets\Scripts\CoinRotation.cs" />
      <Compile Include="Assets\Scripts\EffectSoundsManager.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
+     <Compile Include="Assets\Scripts\GameSceneManager.cs" />
+     <Compile Include="Assets\Scripts\GlobalStaticVariables.cs" />
      <Compile Include="Assets\Scripts\UICoins.cs" />
      <Compile Include="Assets\Scripts\UICountDown.cs" />
      <Compile Include="Assets\Scripts\UIRadar.cs" />

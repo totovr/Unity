@@ -34,7 +34,7 @@ Transform:
   - {fileID: 1756323815717835621}
   - {fileID: 1756323814320840409}
   - {fileID: 1756323814735932543}
-  - {fileID: 1756323815786786398}
+  - {fileID: 1756323815578016672}
   - {fileID: 1756323814626938165}
   - {fileID: 1756323814386847142}
   - {fileID: 1756323815268142592}
@@ -44,7 +44,7 @@ Transform:
   - {fileID: 1756323814411215803}
   - {fileID: 1756323814436533501}
   - {fileID: 1756323815207654039}
-  - {fileID: 1756323815578016672}
+  - {fileID: 1756323815786786398}
   - {fileID: 1756323814580074749}
   - {fileID: 1756323815149070614}
   - {fileID: 1756323814329821998}
@@ -6663,7 +6663,7 @@ PrefabInstance:
     - target: {fileID: 6762394160746851682, guid: 00b4b9d751f2345819500c538e1ca388,
         type: 3}
       propertyPath: m_Name
-      value: Coin (17)
+      value: Coin (7)
       objectReference: {fileID: 0}
     - target: {fileID: 6762394160746851682, guid: 00b4b9d751f2345819500c538e1ca388,
         type: 3}
@@ -6709,7 +6709,7 @@ PrefabInstance:
     - target: {fileID: 6762394160746851695, guid: 00b4b9d751f2345819500c538e1ca388,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6762394160746851695, guid: 00b4b9d751f2345819500c538e1ca388,
         type: 3}
@@ -6749,7 +6749,7 @@ PrefabInstance:
     - target: {fileID: 6762394160746851682, guid: 00b4b9d751f2345819500c538e1ca388,
         type: 3}
       propertyPath: m_Name
-      value: Coin (7)
+      value: Coin (17)
       objectReference: {fileID: 0}
     - target: {fileID: 6762394160746851682, guid: 00b4b9d751f2345819500c538e1ca388,
         type: 3}
@@ -6795,7 +6795,7 @@ PrefabInstance:
     - target: {fileID: 6762394160746851695, guid: 00b4b9d751f2345819500c538e1ca388,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6762394160746851695, guid: 00b4b9d751f2345819500c538e1ca388,
         type: 3}

@@ -20,7 +20,6 @@ public class EffectSoundsManager : MonoBehaviour
         {
             audioSource.clip = audioToPlay[0];
             audioSource.Play();
-            Debug.Log("The sound was played");
         }
     }
 }
