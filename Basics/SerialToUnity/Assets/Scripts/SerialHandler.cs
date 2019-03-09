@@ -35,7 +35,7 @@ public class SerialHandler : MonoBehaviour
     private string _portName;
 
     // Baud rate
-    public BaudRateValue baudRate = BaudRateValue._115200; // probando 
+    public BaudRateValue baudRate = BaudRateValue._115200; 
     private int _baudRate;
 
     // Create a thread
