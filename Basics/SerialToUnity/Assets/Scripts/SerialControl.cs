@@ -12,7 +12,7 @@ public class SerialControl : MonoBehaviour
         serialHandler.OnDataReceived += OnDataReceived;
     }
 
-    void Updata()
+    void Update()
     {
         // serialHandler.Write("0");
     }
